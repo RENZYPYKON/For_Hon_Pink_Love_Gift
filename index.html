@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7b8cb">
+  <title>For Hon ♡</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="floating-hearts" id="floatingHearts" aria-hidden="true"></div>
+  <div class="progress-track"><span id="progressBar"></span></div>
+  <button class="music-toggle" id="musicToggle" aria-label="Toggle music" title="Play or pause our song">♫ <span id="musicLabel">Our song</span></button>
+  <div class="music-gate" id="musicGate" role="dialog" aria-modal="true" aria-labelledby="musicGateTitle" hidden>
+    <div class="music-gate-card">
+      <div class="music-gate-heart" aria-hidden="true">♡</div>
+      <p class="music-gate-kicker">A little surprise from the heart</p>
+      <h2 id="musicGateTitle">I made this just for you</h2>
+      <p>Tap below to open your letter and hear our song.</p>
+      <button class="primary-btn music-gate-btn" id="openSurpriseBtn">Open your surprise, Hon ❤️</button>
+    </div>
+  </div>
+  <audio id="bgMusic" loop preload="auto">
+    <source src="music/our-song.mp3" type="audio/mpeg">
+  </audio>
+
+  <main>
+    <section class="screen hero active" id="welcome">
+      <div class="hero-orb orb-one"></div><div class="hero-orb orb-two"></div>
+      <div class="eyebrow reveal">A LITTLE SOMETHING, JUST FOR YOU</div>
+      <div class="envelope-wrap reveal" id="envelope" role="button" tabindex="0" aria-label="Open the envelope">
+        <div class="envelope-glow"></div>
+        <div class="envelope">
+          <div class="letter-peek"><span>for my favorite person</span><b>♡</b></div>
+          <div class="envelope-back"></div>
+          <div class="envelope-flap"></div>
+          <div class="envelope-front"></div>
+          <div class="seal">♡</div>
+        </div>
+        <span class="tap-hint">tap the envelope</span>
+      </div>
+      <h1 class="hero-title reveal">Hey, <em id="heroNickname">Hon</em><span class="title-heart">♡</span></h1>
+      <p class="hero-copy reveal">I made a little world for you.<br>Take your time inside it.</p>
+      <button class="primary-btn reveal" id="beginBtn">Open your surprise <span>↗</span></button>
+      <div class="bottom-note">MADE WITH ALL MY HEART · JUST FOR YOU</div>
+    </section>
+
+    <section class="screen memory-screen" id="memories">
+      <div class="section-kicker">CHAPTER 01 <span>—</span> OUR LITTLE UNIVERSE</div>
+      <h2 class="section-title">A few of my<br><em>favorite moments.</em></h2>
+      <p class="section-intro">Not because every moment was perfect, but because they were ours.</p>
+      <div class="memory-gallery" id="memoryGallery" aria-label="Our photo memory gallery">
+        <div class="gallery-glow" id="galleryGlow" aria-hidden="true"></div>
+        <div class="gallery-frame">
+          <img class="gallery-photo gallery-photo-a is-active" id="galleryPhotoA" src="photos/photo1.jpg" alt="A favorite memory together">
+          <img class="gallery-photo gallery-photo-b" id="galleryPhotoB" alt="" aria-hidden="true">
+          <div class="gallery-vignette" aria-hidden="true"></div>
+        </div>
+        <div class="gallery-caption" id="galleryCaption" aria-live="polite">
+          <span id="galleryCaptionLabel">OUR MEMORY</span>
+          <p id="galleryCaptionText">One of my favorite days</p>
+        </div>
+        <div class="gallery-controls">
+          <button class="gallery-arrow" id="galleryPrevious" type="button" aria-label="Previous photo">←</button>
+          <div class="gallery-dots" id="galleryDots" aria-label="Choose a photo"></div>
+          <button class="gallery-arrow" id="galleryNext" type="button" aria-label="Next photo">→</button>
+        </div>
+      </div>
+      <p class="photo-tip"><span>✧</span> One little moment at a time.</p>
+      <button class="primary-btn next-btn" data-next="reasons">Keep going <span>↗</span></button>
+    </section>
+
+    <section class="screen reasons-screen" id="reasons">
+      <div class="section-kicker">CHAPTER 02 <span>—</span> LITTLE THINGS</div>
+      <h2 class="section-title">Reasons I adore <em>you.</em></h2>
+      <p class="section-intro">Tap each little card. There are no wrong answers, just things I want you to know.</p>
+      <div class="reason-grid">
+        <button class="reason-card" data-message="Your smile has a way of making an ordinary day feel special. I hope you never forget how beautiful it is."><span class="reason-number">01</span><span class="reason-icon">☼</span><strong>Your smile</strong><small>tap to uncover</small><span class="reason-reveal">♡</span></button>
+        <button class="reason-card" data-message="I love the little things about you that you might not even notice. They make you wonderfully, unmistakably you."><span class="reason-number">02</span><span class="reason-icon">✿</span><strong>Your little ways</strong><small>tap to uncover</small><span class="reason-reveal">♡</span></button>
+        <button class="reason-card" data-message="Even on a regular day, talking to you can become the best part of it. You make the small moments mean something."><span class="reason-number">03</span><span class="reason-icon">☾</span><strong>Being with you</strong><small>tap to uncover</small><span class="reason-reveal">♡</span></button>
+        <button class="reason-card" data-message="You don't have to be perfect or have everything figured out. You deserve kindness, patience, and love exactly as you are."><span class="reason-number">04</span><span class="reason-icon">♡</span><strong>Simply being you</strong><small>tap to uncover</small><span class="reason-reveal">♡</span></button>
+      </div>
+      <div class="reason-message" id="reasonMessage" aria-live="polite">Choose a card to reveal a little note.</div>
+      <button class="primary-btn next-btn" data-next="letter">There's one more thing <span>↗</span></button>
+    </section>
+
+    <section class="screen letter-screen" id="letter">
+      <div class="letter-stars" aria-hidden="true">✦　·　♡　·　✧　·　♡</div>
+      <div class="section-kicker">CHAPTER 03 <span>—</span> FROM ME TO YOU</div>
+      <div class="letter-card">
+        <div class="letter-topline"><span>A LETTER FOR YOU</span><span>♡</span></div>
+        <h2>Dear <em id="letterNickname">Lai</em>,</h2>
+        <div class="typewriter" id="letterText"></div>
+        <div class="letter-signoff">Always with love, <span>your person ♡</span></div>
+      </div>
+      <button class="primary-btn next-btn" data-next="finale">One last surprise <span>↗</span></button>
+    </section>
+
+    <section class="screen finale-screen" id="finale">
+      <div class="final-glow"></div>
+      <div class="final-content">
+        <div class="final-sparkle">✧　♡　✧</div>
+        <p class="section-kicker">AND IF YOU REMEMBER ONE THING...</p>
+        <h2 class="final-title">You are so<br><em>loved.</em></h2>
+        <p class="final-copy">Out of all the little moments life gives us,<br>I'm really glad some of mine have you in them.</p>
+        <button class="heart-button" id="heartButton" aria-label="Send a heart">♡</button>
+        <p class="heart-caption" id="heartCaption">tap the heart</p>
+        <div class="final-signature">For my Hon. My Elai. My Lai. <span>♡</span></div>
+        <button class="text-btn" id="replayBtn">Watch our little story again ↺</button>
+      </div>
+      <div class="final-footer">A SMALL WEBSITE, WITH A VERY BIG FEELING.</div>
+    </section>
+  </main>
+
+  <div class="toast" id="toast" role="status"></div>
+  <script src="script.js"></script>
+</body>
+</html>

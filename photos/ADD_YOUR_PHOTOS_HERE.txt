@@ -1,0 +1,1 @@
+The memory gallery currently uses the photos in this folder, preserving photo1.jpg, photo2.jpg, and photo3.jpg. To add another photo, place the JPG in this folder and add its src, label, caption, and alt text to galleryPhotos in script.js. Keep labels and captions short and personal.
